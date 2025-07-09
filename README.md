@@ -1,53 +1,101 @@
 # estatistica-acidentes-java
-Sistema em Java para cadastrar e consultar estatísticas de acidentes de trânsito, utilizando leitura e gravação em arquivos .txt, laços, procedimentos, funções e conceitos de classe abstrata.
+Sistema em Java para cadastro e consulta de estatísticas de acidentes de trânsito em 10 cidades, com leitura/gravação de arquivos `.txt` e uso de classe abstrata, funções e procedimentos.
 
-# Estatística de Acidentes em Java
+## 📌 Descrição
 
-Este projeto foi desenvolvido como exercício da disciplina de Linguagem de Programação. O sistema simula um menu para cadastro e consulta de estatísticas de acidentes em cidades, utilizando leitura e gravação de arquivos `.txt` em Java.
+Projeto desenvolvido na disciplina de Linguagem de Programação com o objetivo de praticar conceitos de POO, arquivos, estruturas de repetição e controle de fluxo. O sistema cadastra dados sobre acidentes em cidades e permite consultas estatísticas com base nessas informações.
 
 ## 🎯 Objetivo
 
-Permitir o cadastro de 10 cidades com informações sobre acidentes em 2020, armazenando os dados em um arquivo e oferecendo consultas com base nos critérios definidos.
+- Cadastrar 10 cidades com número de acidentes.
+- Gravar os dados em um arquivo de texto (`Acidente.txt`).
+- Permitir consultas como:
+  - Cidades com quantidade de acidentes entre 100 e 500.
+  - Cidade com menor e maior número de acidentes.
+  - Cidades com acidentes acima da média das 10.
 
 ## 🛠️ Funcionalidades
 
-- Cadastro de estatísticas de acidentes (10 registros)
-- Consulta por quantidade de acidentes entre 100 e 500
-- Consulta por cidade com:
-  - Maior número de acidentes
-  - Menor número de acidentes
-- Exibição das cidades com acidentes **acima da média**
-- Gravação e leitura dos dados no arquivo `ArquivoEstatistica.txt`
+- Cadastro de 10 cidades com código, nome e número de acidentes.
+- Gravação e leitura de dados em arquivo `.txt`.
+- Consultas estatísticas com menu interativo:
+  - Acidentes entre 100 e 500.
+  - Maior e menor número de acidentes.
+  - Acima da média geral de acidentes.
 
 ## 🧱 Estrutura de Classes
 
-### 🔹 Classe Abstrata: `Estatistica`
-| Campo         | Tipo    | Descrição                        |
-|---------------|---------|----------------------------------|
-| codigoCidade  | `int`   | Código da cidade                 |
-| nomeCidade    | `String`| Nome da cidade                   |
-| qtdAcidentes  | `int`   | Quantidade de acidentes em 2020 |
+### 🔸 Classe `Classe`
 
-### 🔹 Classe Principal
-Responsável pelo menu e controle da aplicação.
+| Campo           | Tipo    | Descrição                        |
+|-----------------|---------|----------------------------------|
+| codigocidade    | `int`   | Código da cidade                 |
+| nomecidade      | `String`| Nome da cidade                   |
+| qntacidentes    | `int`   | Quantidade de acidentes registrados |
 
-### 🔹 ClasseMetodos
-Contém os métodos:
-- `fCadastraEstatistica()` – Função para cadastrar os 10 registros
-- `pQtdAcidentes()` – Procedimento que exibe cidades com acidentes entre 100 e 500
-- `pMaiorMenor()` – Procedimento que exibe cidade com maior e menor número de acidentes
-- `pAcima()` – Procedimento que exibe cidades com número de acidentes **acima da média**
+### 🔹 Classe `Regra`
 
-## 💾 Tecnologias Utilizadas
+Contém os principais métodos do sistema:
+- `FCadastro()` – Cadastra os dados e grava no arquivo
+- `Pquantidade()` – Consulta cidades com acidentes entre 100 e 500
+- `Consulta()` – Exibe a cidade com menor e maior número de acidentes
+- `Acidente()` – Mostra cidades com acidentes acima da média
+- `Leitura()` – Lê os dados do arquivo para o vetor
+
+### 🔹 Classe `Acidente`
+
+Classe principal com o menu do sistema.
+
+## 📁 Estrutura do Projeto
+```
+estatistica-acidentes-java/
+│
+├── README.md
+├── Acidente.txt ← Arquivo gerado com os registros
+└── src/
+├── Acidente.java ← Classe com o menu principal
+├── Classe.java ← Classe de dados (cidade)
+└── Regra.java ← Métodos e consultas
+```
+## 💻 Tecnologias Utilizadas
 
 - Java
-- Orientação a Objetos
-- Manipulação de arquivos `.txt`
-- IDE: Eclipse ou IntelliJ
+- Orientação a objetos
+- Leitura e gravação de arquivos `.txt`
+- Estrutura de vetores e controle de fluxo
+- IDE: NetBeans, Eclipse ou IntelliJ
 
-## ▶️ Execução
+## ▶️ Como Executar
 
-1. Compile as classes
-2. Execute a `ClassePrincipal`
-3. Navegue pelo menu:
+1. Compile os arquivos da pasta `/src`.
+2. Execute a classe `Acidente.java`.
+3. Navegue pelo menu exibido com as opções:
+```
+1 - Cadastro Estatística
+2 - Consulta por quantidade de acidentes
+3 - Consulta por estatísticas de acidentes
+4 - Acidentes acima da média das 10 cidades
+9 - Finaliza
+```
 
+## 🗃️ Exemplo de Arquivo Gerado
+
+O arquivo `Acidente.txt` é gerado após o cadastro e segue este padrão:
+```
+101
+São Paulo
+420
+102
+Campinas
+95
+...
+```
+
+Cada grupo de 3 linhas representa:
+1. Código da cidade
+2. Nome da cidade
+3. Quantidade de acidentes
+
+## 🏷️ Tags
+
+`java` `acidentes` `estatística` `arquivo-txt` `poo` `ADS` `gravação` `leitura`
