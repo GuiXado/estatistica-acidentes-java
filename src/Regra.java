@@ -8,9 +8,9 @@ public class Regra {
     public Classe[] FCadastro(Classe[] classe)  throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter( fileName ));
                                   
-        for (i = 0; i < 2; i++) classe[i] = new Classe();
+        for (i = 0; i < 10; i++) classe[i] = new Classe();
         
-        for (i = 0; i < 2; i++){
+        for (i = 0; i < 10; i++){
             classe[i].codigocidade = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo:"));
             writer.write(classe[i].codigocidade);
             writer.newLine();
@@ -31,7 +31,7 @@ public class Regra {
     }
     
     public void Pquantidade(Classe[] classe){
-        for (i = 0; i < 2; i++){
+        for (i = 0; i < 10; i++){
             if( classe[i].qntacidentes > 100 && classe[i].qntacidentes < 500 )
                 System.out.println(classe[i].nomecidade + " teve, " + classe[i].qntacidentes + " acidentes");
                 JOptionPane.showMessageDialog(null, classe[i].nomecidade + " teve, " + classe[i].qntacidentes + " acidentes");
@@ -39,7 +39,7 @@ public class Regra {
     }
     int menor, maior;
     public void Consulta(Classe[] classe){
-        for (i = 0; i <2; i++){
+        for (i = 0; i <10; i++){
             if (i == 0){
                 menor = classe[i].qntacidentes;
                 maior = classe[i].qntacidentes;
@@ -48,7 +48,7 @@ public class Regra {
                 if (maior < classe[i].qntacidentes) maior = classe[i].qntacidentes;
             }
         }
-        JOptionPane.showMessageDialog(null, "o menor é, " + menor + "\no maior é: " + maior);
+        JOptionPane.showMessageDialog(null, "o menor Ã©, " + menor + "\no maior Ã©: " + maior);
     }
     //int soma;
     double media;
@@ -57,10 +57,10 @@ public class Regra {
             media += classe[i].qntacidentes;
         }
         media /= classe.length;
-        JOptionPane.showMessageDialog(null, "A m�dia de Acidentes no ano �: " + media);
+        JOptionPane.showMessageDialog(null, "A média de Acidentes no ano é: " + media);
         for (i = 0; i < classe.length; i++){
             if(classe[i].qntacidentes > media){
-                System.out.println("\nC�digo da cidade: "+ classe[i].codigocidade + "\nNome da cidade: " + classe[i].nomecidade + "\nQuantidade de acidentes: " + classe[i].qntacidentes + "\n");
+                System.out.println("\nCódigo da cidade: "+ classe[i].codigocidade + "\nNome da cidade: " + classe[i].nomecidade + "\nQuantidade de acidentes: " + classe[i].qntacidentes + "\n");
             }
         }    
     }
