@@ -4,7 +4,7 @@ public class Acidente {
     public static void main(String[] args) throws IOException{
         //String fileName = "Acidente.txt";
         
-        Classe[] classe = new Classe[2];
+        Classe[] classe = new Classe[10];
         Regra r = new Regra();
         //for (int i = 0 ; i < 10 ; i++) classe[i] = new Classe();
         
