@@ -12,7 +12,7 @@ public class Regra {
         
         for (i = 0; i < 10; i++){
             classe[i].codigocidade = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo:"));
-            writer.write(classe[i].codigocidade);
+            writer.write(Integer.toString(classe[i].codigocidade));
             writer.newLine();
             
             classe[i].nomecidade = JOptionPane.showInputDialog("DIgite o nome da cidade:");
@@ -20,7 +20,7 @@ public class Regra {
             writer.newLine();
             
             classe[i].qntacidentes =Integer.parseInt(JOptionPane.showInputDialog("Quantidade de acidentes:"));
-            writer.write(classe[i].qntacidentes);
+            writer.write(Integer.toString(classe[i].qntacidentes));
             writer.newLine();
             
             //writer.write("**");
